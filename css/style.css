@@ -82,6 +82,55 @@ body{
     font-size: 30px;
     margin-top: 8px;
     margin-left: 26px;
+    animation-name: rotate-gear;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+#logo:hover{
+    border-radius: 2px;
+    color: black;
+    background-color: #ccc;
+}
+
+@keyframes rotate-gear{
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+
+#logo:hover .gear{
+    animation: fromBellow 500ms linear;
+}
+
+@keyframes fromBellow{
+    0%{
+        transform:translateY(0%);
+    }
+    50%{
+        transform:translateY(200%);
+    }
+    100%{
+        transform:translateY(0%);
+    }
+}
+
+#logo:hover h3 {
+    animation: fromRigth 300ms linear;
+}
+
+@keyframes fromRigth{
+    from{
+        transform: translateX(200%);
+    }
+    to{
+        transform:translateX(0%)
+    }
 }
 
 #logo h3{
@@ -162,6 +211,11 @@ body{
     margin: 22px;
     margin-top: 40px;
     cursor: pointer;
+    transition: all 300ms;
+}
+
+.card:hover{
+    background: black;
 }
 
 .card:last-child{
@@ -176,7 +230,25 @@ body{
     line-height: 110px;
     text-align: center;
     margin: 0px auto;
+    transition: all 300ms;
 }
+
+.card:hover .icon{
+    font-size: 70px;
+    color: #37bcf9;
+    animation: showIcon 300ms linear;
+}
+
+@keyframes showIcon{
+    from{
+        transform:translateY(-200%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+
 
 .card .category{
     width: 100%;
@@ -186,14 +258,47 @@ body{
     font-weight: bold;
     text-align: center;
     color: #00538c;
+    transition: all 300ms;
 }
 
+.card:hover .category{
+    color: white;
+    animation: showCategory 400ms linear;
+}
+
+@keyframes showCategory{
+    from{
+        transform: translateY(-300%);
+        color:black;
+    }
+    to{
+        transform: translateY(0%);
+        color:white;
+    }
+}
 .card .description{
     text-align: center;
     color: #016bb1;
     font-family: "TrebuchetMS";
     margin: 2px;
     font-size: 16px;
+    transition: all 300ms;
+}
+
+.card:hover .description{
+    color: white;
+    animation: showDescription 400ms linear;
+}
+
+@keyframes showDescription{
+    from{
+        transform: translateX(-300%);
+        color: black;
+    }
+    to{
+        transform: translateX(-0%);
+        color: white;
+    }
 }
 
 /*BARRA LATERAL*/
@@ -370,6 +475,30 @@ aside h3{
     margin-bottom: 20px;
 }
 
+#social .overlay{
+    display: block;
+    height: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: 0px 0px 1px #ccc;
+    border: 3px solid white;
+    box-shadow: 0px 0px 4px #ccc;
+    background: #f4f7fe;
+    position: absolute;
+    padding: 5px;
+    margin-left: 70px;
+    margin-top: -52px;
+    cursor: pointer;
+    transform: translateX(-80%);
+    opacity: 0;
+    transition: all 400ms;
+}
+
+#social div:hover .overlay{
+    opacity: 1;
+    transform: translateX(0%);
+}
 /* ARTICULOS*/
 #articles{
     width: 860px;
@@ -452,6 +581,7 @@ aside h3{
     line-height: 100px;
     text-align: center;
     font-family: "BebasNeue";
+    transition: all 1s;
 
 }
 
@@ -462,7 +592,44 @@ aside h3{
     letter-spacing: 3px;
     color: #00538c;
     text-decoration: none;
+    transition: all 1s;transition: all 1s;
 }
+
+
+#blog:hover{
+    background-color: #333;
+
+    border: 10px solid #37bcf9;
+    border-radius: 240px;
+    box-shadow: 0px 0px 10px gray;
+    animation: blink 10s infinite linear;
+
+}
+
+#blog:hover a{
+    color: white;
+    text-shadow: 1px 1px 1px black , 1px 2px 1px black, 1px px 1px black, 1px 4px 5px black, 1px 6px 1px black;
+}
+
+@keyframes blink{
+    0%{
+        border:10px solid #37bcf9
+    }
+    25%{
+        border:10px solid green;
+    }
+    50%{
+        border:10px solid yellow;
+    }
+    75%{
+        border:10px solid white;
+    }
+    100%{
+        border:10px solid #37bcf9;
+    }
+}
+
+
 
 /*FOOTER*/
 
@@ -521,7 +688,14 @@ footer h5{
 #footer ul li a{
     display: block;
     height: 40px;
+    transition: all 300ms;
 
+}
+
+#footer ul li:hover a{
+    padding-left: 40px;
+    color: white;
+    width: 100%;
 }
 
 #footer iframe{
