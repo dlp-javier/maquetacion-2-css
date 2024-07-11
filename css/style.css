@@ -305,7 +305,7 @@ body{
 
 #lateral{
     width: 300px;
-    min-height: 1200px;
+    
     font-family: "TrebuchetMS";
     float: right;
     margin: 20px;
@@ -547,6 +547,8 @@ aside h3{
 #articles article h4 a{
     text-decoration: none;
     color: #00538c;
+    width: 190px;
+    display: block;
 }
 
 #articles article h4 a:hover{
